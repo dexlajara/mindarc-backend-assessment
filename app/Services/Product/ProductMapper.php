@@ -26,13 +26,13 @@ final class ProductMapper implements ProductMapperInterface
     /**
      * @param mixed[] $data
      */
-    private function formatPrice(array $data): ?float
+    private function formatPrice(array $data): ?string
     {
         if (isset($data['price']) === false) {
             return null;
         }
 
-        return \round((float)$data['price'], 3);
+        return \number_format(\round((float)$data['price'], 3), 3);
     }
 
     /**
@@ -53,7 +53,7 @@ final class ProductMapper implements ProductMapperInterface
      */
     private function formatTitle(array $data): ?string
     {
-        if (isset($data['title']) === false || is_string($data['title']) === false) {
+        if (isset($data['title']) === false || \is_string($data['title']) === false) {
             return null;
         }
 
