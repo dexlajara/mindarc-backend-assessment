@@ -25,7 +25,7 @@ final class ProductWebhookProcessor implements ProductWebhookProcessorInterface
             }
 
             $product = $this->productMapper->map($item);
-            // $product->save();
+            $product->save();
 
             $products[] = $product;
         }

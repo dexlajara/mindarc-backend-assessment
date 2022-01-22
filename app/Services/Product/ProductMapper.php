@@ -28,7 +28,7 @@ final class ProductMapper implements ProductMapperInterface
      */
     private function formatPrice(array $data): ?float
     {
-        if (isset($data['price']) === false || $data['price']) {
+        if (isset($data['price']) === false) {
             return null;
         }
 
